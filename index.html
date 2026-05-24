@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦁 Belajar Hewan Seru! - Kelas 3 SD</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Floating Bubbles Background -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Floating Animals Decoration -->
+    <div class="floating-animals">
+        <span class="float-animal" style="left:5%; animation-delay:0s;">🦋</span>
+        <span class="float-animal" style="left:90%; animation-delay:1s;">🐝</span>
+        <span class="float-animal" style="left:15%; animation-delay:2s;">⭐</span>
+        <span class="float-animal" style="left:80%; animation-delay:3s;">🌟</span>
+        <span class="float-animal" style="left:50%; animation-delay:1.5s;">✨</span>
+    </div>
+
+    <!-- HALAMAN INTRO -->
+    <div id="page-intro" class="page active">
+        <div class="intro-container">
+            <div class="intro-header">
+                <div class="mascot-container">
+                    <div class="mascot bounce">🦁</div>
+                    <div class="mascot-speech">Hai teman-teman!</div>
+                </div>
+                <h1 class="main-title">
+                    <span class="title-emoji">🌍</span>
+                    Dunia Hewan Seru!
+                    <span class="title-emoji">🌿</span>
+                </h1>
+                <p class="subtitle">Belajar Jenis-Jenis Hewan untuk Kelas 3 SD</p>
+                <div class="stars-row">
+                    <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+                </div>
+            </div>
+
+            <div class="menu-cards">
+                <div class="menu-card card-materi" onclick="showPage('page-materi')" id="btn-materi">
+                    <div class="card-icon">📚</div>
+                    <h3>Materi</h3>
+                    <p>Pelajari jenis hewan</p>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="menu-card card-quiz" onclick="startQuiz()" id="btn-quiz">
+                    <div class="card-icon">🎯</div>
+                    <h3>Kuis Seru!</h3>
+                    <p>Uji pengetahuanmu</p>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="menu-card card-match" onclick="showPage('page-match')" id="btn-match">
+                    <div class="card-icon">🎮</div>
+                    <h3>Cocokkan!</h3>
+                    <p>Pasangkan hewan</p>
+                    <div class="card-arrow">→</div>
+                </div>
+            </div>
+
+            <div class="score-display" id="total-score-display">
+                <span>🏆 Skor Terbaikmu: </span>
+                <span id="best-score">0</span>
+                <span> Bintang</span>
+            </div>
+
+            <!-- AI Voice Button -->
+            <button class="voice-btn pulse-btn" onclick="speakIntro()">
+                <i class="fas fa-volume-up"></i> Dengarkan Petunjuk!
+            </button>
+        </div>
+    </div>
+
+    <!-- HALAMAN MATERI -->
+    <div id="page-materi" class="page">
+        <div class="page-header gradient-green">
+            <button class="back-btn" onclick="showPage('page-intro')">
+                <i class="fas fa-arrow-left"></i> Kembali
+            </button>
+            <h2>📚 Materi Jenis Hewan</h2>
+            <button class="voice-btn-small" onclick="speakMateri()">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+
+        <div class="materi-container">
+            <!-- Tab Navigation -->
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="showTab('mamalia')">🐮 Mamalia</button>
+                <button class="tab-btn" onclick="showTab('unggas')">🐦 Unggas</button>
+                <button class="tab-btn" onclick="showTab('reptil')">🦎 Reptil</button>
+                <button class="tab-btn" onclick="showTab('amfibi')">🐸 Amfibi</button>
+                <button class="tab-btn" onclick="showTab('ikan')">🐟 Ikan</button>
+                <button class="tab-btn" onclick="showTab('serangga')">🦋 Serangga</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="tab-mamalia" class="tab-content active">
+                <div class="materi-header">
+                    <div class="materi-icon">🐮</div>
+                    <div>
+                        <h3>Mamalia (Hewan Menyusui)</h3>
+                        <p class="materi-desc">Hewan yang menyusui anaknya dan berdarah panas</p>
+                    </div>
+                </div>
+                <div class="ciri-ciri">
+                    <h4>✅ Ciri-cirinya:</h4>
+                    <ul>
+                        <li>🤱 Menyusui anaknya</li>
+                        <li>🌡️ Berdarah panas</li>
+                        <li>🫁 Bernapas dengan paru-paru</li>
+                        <li>🦴 Tubuh berbulu</li>
+                        <li>🐣 Melahirkan anak (vivipar)</li>
+                    </ul>
+                </div>
+                <div class="animal-cards-grid">
+                    <div class="animal-card" onclick="speakAnimal('Sapi adalah hewan mamalia yang menghasilkan susu')">
+                        <div class="animal-emoji">🐄</div>
+                        <div class="animal-name">Sapi</div>
+                        <div class="animal-fact">Menghasilkan susu</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Kucing adalah hewan mamalia peliharaan yang lucu')">
+                        <div class="animal-emoji">🐱</div>
+                        <div class="animal-name">Kucing</div>
+                        <div class="animal-fact">Hewan peliharaan</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Lumba lumba adalah mamalia yang hidup di air')">
+                        <div class="animal-emoji">🐬</div>
+                        <div class="animal-name">Lumba-lumba</div>
+                        <div class="animal-fact">Mamalia laut</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Kelelawar adalah mamalia yang bisa terbang')">
+                        <div class="animal-emoji">🦇</div>
+                        <div class="animal-name">Kelelawar</div>
+                        <div class="animal-fact">Mamalia terbang</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Gajah adalah mamalia terbesar di darat')">
+                        <div class="animal-emoji">🐘</div>
+                        <div class="animal-name">Gajah</div>
+                        <div class="animal-fact">Terbesar di darat</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Harimau adalah mamalia karnivora yang gagah')">
+                        <div class="animal-emoji">🐯</div>
+                        <div class="animal-name">Harimau</div>
+                        <div class="animal-fact">Kucing terbesar</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-unggas" class="tab-content">
+                <div class="materi-header">
+                    <div class="materi-icon">🐦</div>
+                    <div>
+                        <h3>Unggas (Aves)</h3>
+                        <p class="materi-desc">Hewan berbulu yang berkembang biak dengan bertelur</p>
+                    </div>
+                </div>
+                <div class="ciri-ciri">
+                    <h4>✅ Ciri-cirinya:</h4>
+                    <ul>
+                        <li>🪶 Tubuh bersayap dan berbulu</li>
+                        <li>🌡️ Berdarah panas</li>
+                        <li>🥚 Bertelur (ovipar)</li>
+                        <li>🫁 Bernapas dengan paru-paru</li>
+                        <li>👅 Memiliki paruh</li>
+                    </ul>
+                </div>
+                <div class="animal-cards-grid">
+                    <div class="animal-card" onclick="speakAnimal('Ayam adalah unggas yang menghasilkan telur dan daging')">
+                        <div class="animal-emoji">🐔</div>
+                        <div class="animal-name">Ayam</div>
+                        <div class="animal-fact">Penghasil telur</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Elang adalah unggas pemangsa yang kuat')">
+                        <div class="animal-emoji">🦅</div>
+                        <div class="animal-name">Elang</div>
+                        <div class="animal-fact">Burung pemangsa</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Penguin adalah unggas yang tidak bisa terbang')">
+                        <div class="animal-emoji">🐧</div>
+                        <div class="animal-name">Penguin</div>
+                        <div class="animal-fact">Tidak bisa terbang</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Bebek adalah unggas yang suka berenang')">
+                        <div class="animal-emoji">🦆</div>
+                        <div class="animal-name">Bebek</div>
+                        <div class="animal-fact">Suka berenang</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Burung hantu adalah unggas yang aktif di malam hari')">
+                        <div class="animal-emoji">🦉</div>
+                        <div class="animal-name">Burung Hantu</div>
+                        <div class="animal-fact">Aktif malam hari</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Merak adalah unggas dengan bulu yang sangat indah')">
+                        <div class="animal-emoji">🦚</div>
+                        <div class="animal-name">Merak</div>
+                        <div class="animal-fact">Bulu sangat indah</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-reptil" class="tab-content">
+                <div class="materi-header">
+                    <div class="materi-icon">🦎</div>
+                    <div>
+                        <h3>Reptil (Hewan Melata)</h3>
+                        <p class="materi-desc">Hewan berdarah dingin yang kulitnya bersisik</p>
+                    </div>
+                </div>
+                <div class="ciri-ciri">
+                    <h4>✅ Ciri-cirinya:</h4>
+                    <ul>
+                        <li>🌡️ Berdarah dingin (ektoderm)</li>
+                        <li>🐍 Kulit bersisik kering</li>
+                        <li>🥚 Bertelur atau melahirkan</li>
+                        <li>🫁 Bernapas dengan paru-paru</li>
+                        <li>🦵 Sebagian berkaki empat</li>
+                    </ul>
+                </div>
+                <div class="animal-cards-grid">
+                    <div class="animal-card" onclick="speakAnimal('Buaya adalah reptil yang sangat besar dan berbahaya')">
+                        <div class="animal-emoji">🐊</div>
+                        <div class="animal-name">Buaya</div>
+                        <div class="animal-fact">Reptil terbesar</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Ular adalah reptil yang tidak berkaki')">
+                        <div class="animal-emoji">🐍</div>
+                        <div class="animal-name">Ular</div>
+                        <div class="animal-fact">Tidak berkaki</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Kura kura adalah reptil yang memiliki cangkang pelindung')">
+                        <div class="animal-emoji">🐢</div>
+                        <div class="animal-name">Kura-kura</div>
+                        <div class="animal-fact">Berumur panjang</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Bunglon adalah reptil yang bisa berubah warna')">
+                        <div class="animal-emoji">🦎</div>
+                        <div class="animal-name">Bunglon</div>
+                        <div class="animal-fact">Bisa ganti warna</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Komodo adalah reptil terbesar di dunia yang ada di Indonesia')">
+                        <div class="animal-emoji">🦕</div>
+                        <div class="animal-name">Komodo</div>
+                        <div class="animal-fact">Asli Indonesia</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Iguana adalah reptil yang sering dipelihara sebagai hewan peliharaan')">
+                        <div class="animal-emoji">🦖</div>
+                        <div class="animal-name">Iguana</div>
+                        <div class="animal-fact">Bisa dipelihara</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-amfibi" class="tab-content">
+                <div class="materi-header">
+                    <div class="materi-icon">🐸</div>
+                    <div>
+                        <h3>Amfibi (Hewan Dua Alam)</h3>
+                        <p class="materi-desc">Hewan yang hidup di dua tempat: darat dan air</p>
+                    </div>
+                </div>
+                <div class="ciri-ciri">
+                    <h4>✅ Ciri-cirinya:</h4>
+                    <ul>
+                        <li>🌊🏔️ Hidup di darat dan air</li>
+                        <li>🌡️ Berdarah dingin</li>
+                        <li>🫧 Kulit lembab tanpa sisik</li>
+                        <li>🥚 Bertelur di air</li>
+                        <li>🔄 Mengalami metamorfosis</li>
+                    </ul>
+                </div>
+                <div class="animal-cards-grid">
+                    <div class="animal-card" onclick="speakAnimal('Katak adalah amfibi yang mengalami metamorfosis dari berudu')">
+                        <div class="animal-emoji">🐸</div>
+                        <div class="animal-name">Katak</div>
+                        <div class="animal-fact">Metamorfosis</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Salamander adalah amfibi yang mirip kadal tetapi kulitnya licin')">
+                        <div class="animal-emoji">🦎</div>
+                        <div class="animal-name">Salamander</div>
+                        <div class="animal-fact">Kulit licin</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Kodok adalah amfibi yang hampir mirip katak')">
+                        <div class="animal-emoji">🐊</div>
+                        <div class="animal-name">Kodok</div>
+                        <div class="animal-fact">Mirip katak</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-ikan" class="tab-content">
+                <div class="materi-header">
+                    <div class="materi-icon">🐟</div>
+                    <div>
+                        <h3>Ikan (Pisces)</h3>
+                        <p class="materi-desc">Hewan yang hidup di air dan bernapas dengan insang</p>
+                    </div>
+                </div>
+                <div class="ciri-ciri">
+                    <h4>✅ Ciri-cirinya:</h4>
+                    <ul>
+                        <li>🌊 Hidup di air</li>
+                        <li>🫧 Bernapas dengan insang</li>
+                        <li>🐟 Tubuh bersisik</li>
+                        <li>🏊 Berenang dengan sirip</li>
+                        <li>🥚 Bertelur (ovipar)</li>
+                    </ul>
+                </div>
+                <div class="animal-cards-grid">
+                    <div class="animal-card" onclick="speakAnimal('Ikan nemo atau ikan badut tinggal di sekitar anemon laut')">
+                        <div class="animal-emoji">🐠</div>
+                        <div class="animal-name">Ikan Nemo</div>
+                        <div class="animal-fact">Di terumbu karang</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Ikan hiu adalah ikan pemangsa terbesar di laut')">
+                        <div class="animal-emoji">🦈</div>
+                        <div class="animal-name">Ikan Hiu</div>
+                        <div class="animal-fact">Raja laut</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Ikan mas koki adalah ikan hias yang banyak dipelihara')">
+                        <div class="animal-emoji">🐡</div>
+                        <div class="animal-name">Ikan Mas Koki</div>
+                        <div class="animal-fact">Ikan hias</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Ikan salmon hidup di sungai dan laut')">
+                        <div class="animal-emoji">🐟</div>
+                        <div class="animal-name">Ikan Salmon</div>
+                        <div class="animal-fact">Sangat bergizi</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-serangga" class="tab-content">
+                <div class="materi-header">
+                    <div class="materi-icon">🦋</div>
+                    <div>
+                        <h3>Serangga (Insekta)</h3>
+                        <p class="materi-desc">Hewan berbuku-buku dengan 3 pasang kaki</p>
+                    </div>
+                </div>
+                <div class="ciri-ciri">
+                    <h4>✅ Ciri-cirinya:</h4>
+                    <ul>
+                        <li>🦵 Memiliki 6 kaki (3 pasang)</li>
+                        <li>🔬 Tubuh terdiri dari 3 bagian</li>
+                        <li>📡 Memiliki antena</li>
+                        <li>🌡️ Berdarah dingin</li>
+                        <li>🥚 Sebagian besar bertelur</li>
+                    </ul>
+                </div>
+                <div class="animal-cards-grid">
+                    <div class="animal-card" onclick="speakAnimal('Kupu kupu adalah serangga yang sangat indah warnanya')">
+                        <div class="animal-emoji">🦋</div>
+                        <div class="animal-name">Kupu-kupu</div>
+                        <div class="animal-fact">Sangat indah</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Lebah adalah serangga yang menghasilkan madu yang manis')">
+                        <div class="animal-emoji">🐝</div>
+                        <div class="animal-name">Lebah</div>
+                        <div class="animal-fact">Penghasil madu</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Semut adalah serangga yang hidup berkoloni')">
+                        <div class="animal-emoji">🐜</div>
+                        <div class="animal-name">Semut</div>
+                        <div class="animal-fact">Hidup berkoloni</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Capung adalah serangga yang bisa terbang sangat cepat')">
+                        <div class="animal-emoji">🪲</div>
+                        <div class="animal-name">Capung</div>
+                        <div class="animal-fact">Terbang cepat</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Jangkrik adalah serangga yang bisa mengeluarkan bunyi')">
+                        <div class="animal-emoji">🦗</div>
+                        <div class="animal-name">Jangkrik</div>
+                        <div class="animal-fact">Bisa berbunyi</div>
+                    </div>
+                    <div class="animal-card" onclick="speakAnimal('Kumbang adalah serangga yang memiliki cangkang keras')">
+                        <div class="animal-emoji">🐞</div>
+                        <div class="animal-name">Kumbang</div>
+                        <div class="animal-fact">Cangkang keras</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <button class="btn-next" onclick="startQuiz()">
+                Lanjut ke Kuis! 🎯
+            </button>
+        </div>
+    </div>
+
+    <!-- HALAMAN KUIS -->
+    <div id="page-quiz" class="page">
+        <div class="page-header gradient-purple">
+            <button class="back-btn" onclick="confirmBack()">
+                <i class="fas fa-arrow-left"></i> Kembali
+            </button>
+            <h2>🎯 Kuis Seru!</h2>
+            <div class="quiz-progress-header">
+                <span id="q-current">1</span>/<span id="q-total">15</span>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <!-- Progress Bar -->
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <div class="progress-stars" id="progress-stars"></div>
+            </div>
+
+            <!-- Score & Timer -->
+            <div class="quiz-stats">
+                <div class="stat-box score-box">
+                    <i class="fas fa-star"></i>
+                    <span id="current-score">0</span>
+                    <small>Poin</small>
+                </div>
+                <div class="stat-box timer-box">
+                    <i class="fas fa-clock"></i>
+                    <span id="timer">30</span>
+                    <small>Detik</small>
+                </div>
+                <div class="stat-box correct-box">
+                    <i class="fas fa-check"></i>
+                    <span id="correct-count">0</span>
+                    <small>Benar</small>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="question-card" id="question-card">
+                <div class="question-number-badge" id="q-badge">Soal 1</div>
+                <div class="question-emoji" id="q-emoji">🦁</div>
+                <div class="question-text" id="q-text">Pertanyaan akan muncul di sini...</div>
+                <button class="voice-btn-small" onclick="speakQuestion()" id="speak-btn">
+                    <i class="fas fa-volume-up"></i> Dengarkan
+                </button>
+            </div>
+
+            <!-- Answer Options -->
+            <div class="options-grid" id="options-container">
+            </div>
+
+            <!-- Feedback -->
+            <div class="feedback-container" id="feedback" style="display:none">
+                <div class="feedback-icon" id="feedback-icon"></div>
+                <div class="feedback-text" id="feedback-text"></div>
+                <div class="feedback-explain" id="feedback-explain"></div>
+                <button class="btn-next-q" id="btn-next-q" onclick="nextQuestion()">
+                    Lanjut <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HALAMAN HASIL -->
+    <div id="page-result" class="page">
+        <div class="result-container">
+            <div class="result-fireworks">
+                <span>🎆</span><span>🎇</span><span>✨</span>
+                <span>🎉</span><span>🎊</span><span>🌟</span>
+            </div>
+
+            <div class="result-mascot" id="result-mascot">🏆</div>
+            <h2 class="result-title" id="result-title">Luar Biasa!</h2>
+            <p class="result-subtitle" id="result-subtitle">Kamu hebat!</p>
+
+            <div class="result-score-card">
+                <div class="score-circle" id="score-circle">
+                    <div class="score-number" id="final-score">0</div>
+                    <div class="score-label">Poin</div>
+                </div>
+                <div class="result-stats">
+                    <div class="result-stat">
+                        <span class="r-icon">✅</span>
+                        <span id="r-correct">0</span>
+                        <span>Benar</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="r-icon">❌</span>
+                        <span id="r-wrong">0</span>
+                        <span>Salah</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="r-icon">⭐</span>
+                        <span id="r-stars">0</span>
+                        <span>Bintang</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Star Rating -->
+            <div class="star-rating" id="star-rating"></div>
+
+            <!-- Badge -->
+            <div class="badge-earned" id="badge-earned">
+                <div class="badge-icon" id="badge-icon">🥇</div>
+                <div class="badge-text" id="badge-text">Juara Kelas!</div>
+            </div>
+
+            <div class="result-buttons">
+                <button class="btn-retry" onclick="startQuiz()">
+                    <i class="fas fa-redo"></i> Coba Lagi!
+                </button>
+                <button class="btn-home" onclick="showPage('page-intro')">
+                    <i class="fas fa-home"></i> Menu Utama
+                </button>
+            </div>
+
+            <button class="voice-btn pulse-btn" onclick="speakResult()" style="margin-top:20px">
+                <i class="fas fa-volume-up"></i> Dengarkan Hasilmu!
+            </button>
+        </div>
+    </div>
+
+    <!-- HALAMAN MATCH GAME -->
+    <div id="page-match" class="page">
+        <div class="page-header gradient-orange">
+            <button class="back-btn" onclick="showPage('page-intro')">
+                <i class="fas fa-arrow-left"></i> Kembali
+            </button>
+            <h2>🎮 Cocokkan Hewan!</h2>
+            <button class="voice-btn-small" onclick="speakMatch()">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+
+        <div class="match-container">
+            <p class="match-instruction">Klik hewan, lalu klik kelompoknya yang sesuai! 🎯</p>
+
+            <div class="match-score-bar">
+                <span>⭐ Skor: <strong id="match-score">0</strong></span>
+                <span>✅ Benar: <strong id="match-correct">0</strong>/10</span>
+            </div>
+
+            <div class="match-game-area">
+                <div class="match-animals" id="match-animals">
+                    <!-- Animals will be generated by JS -->
+                </div>
+
+                <div class="match-categories">
+                    <div class="match-cat" id="cat-mamalia" onclick="dropAnimal('Mamalia')">
+                        <div class="cat-header">🐮 Mamalia</div>
+                        <div class="cat-drop-zone" id="drop-mamalia">
+                            <span class="drop-hint">Taruh di sini</span>
+                        </div>
+                    </div>
+                    <div class="match-cat" id="cat-unggas" onclick="dropAnimal('Unggas')">
+                        <div class="cat-header">🐦 Unggas</div>
+                        <div class="cat-drop-zone" id="drop-unggas">
+                            <span class="drop-hint">Taruh di sini</span>
+                        </div>
+                    </div>
+                    <div class="match-cat" id="cat-reptil" onclick="dropAnimal('Reptil')">
+                        <div class="cat-header">🦎 Reptil</div>
+                        <div class="cat-drop-zone" id="drop-reptil">
+                            <span class="drop-hint">Taruh di sini</span>
+                        </div>
+                    </div>
+                    <div class="match-cat" id="cat-ikan" onclick="dropAnimal('Ikan')">
+                        <div class="cat-header">🐟 Ikan</div>
+                        <div class="cat-drop-zone" id="drop-ikan">
+                            <span class="drop-hint">Taruh di sini</span>
+                        </div>
+                    </div>
+                    <div class="match-cat" id="cat-serangga" onclick="dropAnimal('Serangga')">
+                        <div class="cat-header">🦋 Serangga</div>
+                        <div class="cat-drop-zone" id="drop-serangga">
+                            <span class="drop-hint">Taruh di sini</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-reset-match" onclick="resetMatch()">
+                <i class="fas fa-redo"></i> Mulai Ulang
+            </button>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" style="display:none">
+        <div class="loading-spinner">
+            <div class="spinner">🦁</div>
+            <p>Memuat...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
